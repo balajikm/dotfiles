@@ -212,7 +212,7 @@ alias -s txt="${EDITOR}"
 alias -s log="${EDITOR}"
 
 # opens the relevant files and folders (used for laptop provisioning) in a single VSCode session
-command_exists code && alias code-gist='code "${DOTFILES_DIR}" "${PERSONAL_BIN_DIR}" "${PERSONAL_CONFIGS_DIR}" "${HOME}"/.gitconfig-* "${HOME}/.gitignore" "${HOME}/.tool-versions" "${PERSONAL_PROFILES_DIR}/.gitignore"'
+command_exists code && alias code-gist='code-insiders "${DOTFILES_DIR}" "${PERSONAL_BIN_DIR}" "${PERSONAL_CONFIGS_DIR}" "${HOME}"/.gitconfig-* "${HOME}/.gitignore" "${HOME}/.tool-versions" "${PERSONAL_PROFILES_DIR}/.gitignore"'
 
 # updates the specified repo (ie creates a local commit of changed files that I am not interested in verifying, but which need to be committed into that repo)
 # internal function: not to be called separately
