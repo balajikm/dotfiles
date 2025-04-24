@@ -61,95 +61,89 @@ return true if is_base_install
 # formulae pulled in for advanced configs (these are optional, but still recommended)
 brew 'bat'
 brew 'btop'
+brew 'cmake'
+brew 'docker-credential-helper'
+brew 'gh'
 brew 'git-gui'
+brew 'glib'
+brew 'gnutls'
+brew 'go'
+brew 'helm'
 brew 'jq'
+brew 'kubernetes-cli'
+brew 'libidn2'
+brew 'libslirp'
+brew 'lima'
+brew 'maven'
 brew 'moreutils'
 brew 'ncdu'
+brew 'node'
 brew 'prettyping'
+brew 'protobuf'
+brew 'psqlodbc'
 brew 'ripgrep'
+brew 'sdl2'
 brew 'syncthing'
+brew 'telnet'
 brew 'tldr'
+brew 'uv'
 
 cask 'aldente', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'AlDente'"
 cask 'appcleaner'
-cask 'brave-browser'
+cask 'arc'
+cask 'azure-data-studio'
 cask 'clocker', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Clocker'"
-cask 'fliqlo'
-cask 'firefox@nightly' #, greedy: true
+cask 'cursor'
+cask 'fig'
+cask 'google-chrome'
+cask 'intellij-idea-ce'
 cask 'jordanbaird-ice', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Ice'"
-cask 'keepassxc@beta'
+cask 'keepassxc'
 cask 'keepingyouawake', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'KeepingYouAwake'"
 cask 'keycastr'
 cask 'keyclu' if is_arm
-# cask 'monolingual'
-cask 'notunes'
+cask 'lm-studio' if is_arm
+cask 'monolingual'
 cask 'ollama', restart_service: :changed
+cask 'omnissa-horizon-client'
 cask 'onlyoffice'
-cask 'onyx'
-cask 'protonvpn'
 cask 'rancher'
 cask 'raycast', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Raycast'"
-# cask 'silicon' if is_arm
+cask 'rider'
+cask 'slack'
 cask 'stats', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Stats'"
-cask 'the-unarchiver'
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen-browser@twilight'
+cask 'visual-studio-code@insiders'
 cask 'zoom'
-
-brew 'mas'
-mas 'PDFgear', id: 6469021132
 
 # VSCode extensions
 # Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find code!)
 is_vscode_installed = !`which code`.chomp.empty?
 if is_vscode_installed
-  # This is failing on different machines
-  # vscode 'formulahendry.code-runner'
-  # vscode 'nicolasvuillamy.vscode-groovy-lint'
-  # vscode 'redhat.java'
-  # vscode 'sonarsource.sonarlint-vscode'
-  # vscode 'vscjava.vscode-java-debug'
-  # vscode 'vscjava.vscode-java-pack'
-  # vscode 'vscjava.vscode-java-test'
-  # vscode 'vscjava.vscode-lombok'
-  vscode 'brandonkirbyson.vscode-animations'
-  vscode 'britesnow.vscode-toggle-quotes'
-  vscode 'codezombiech.gitignore'
-  vscode 'davidanson.vscode-markdownlint'
-  vscode 'dbaeumer.vscode-eslint'
-  vscode 'digitalbrainstem.javascript-ejs-support'
-  vscode 'drcika.apc-extension'
-  vscode 'eamodio.gitlens'
-  vscode 'editorconfig.editorconfig'
+  vscode 'bpruitt-goddard.mermaid-markdown-syntax-highlighting'
+  vscode 'dart-code.dart-code'
+  vscode 'dart-code.flutter'
   vscode 'esbenp.prettier-vscode'
-  vscode 'genuitecllc.codetogether'
-  vscode 'ibm.output-colorizer'
-  vscode 'mechatroner.rainbow-csv'
-  vscode 'mikestead.dotenv'
-  vscode 'mkhl.direnv'
+  vscode 'ionide.ionide-fsharp'
   vscode 'ms-azuretools.vscode-docker'
-  vscode 'ms-vscode.vscode-typescript-next'
-  vscode 'oderwat.indent-rainbow'
-  vscode 'orta.vscode-jest'
-  vscode 'redhat.vscode-yaml'
-  vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
-  vscode 'shopify.ruby-lsp'
-  vscode 'tchayen.markdown-links'
-  vscode 'tyriar.sort-lines'
-  vscode 'vscode-icons-team.vscode-icons'
-  vscode 'wayou.vscode-todo-highlight'
-  vscode 'wholroyd.jinja'
-  vscode 'wmaurer.change-case'
-  vscode 'yzhang.markdown-all-in-one'
+  vscode 'ms-dotnettools.csharp'
+  vscode 'ms-dotnettools.vscode-dotnet-runtime'
+  vscode 'ms-toolsai.jupyter'
+  vscode 'ms-toolsai.jupyter-keymap'
+  vscode 'ms-toolsai.jupyter-renderers'
+  vscode 'ms-toolsai.vscode-jupyter-cell-tags'
+  vscode 'ms-toolsai.vscode-jupyter-slideshow'
+  vscode 'pkief.material-icon-theme'
+  vscode 'rangav.vscode-thunder-client'
+  vscode 'vstirbu.vscode-mermaid-preview'
+  vscode 'zhang-renyang.chat-gpt'
 end
 
 # ----------------------------------------------------------------------------------------------------------
 # Moved these brew and cask lines to clean up the noise from the above alphabetically sorted lists
 
 # ---- zen-browser development
-brew 'gnu-tar'
-brew 'mercurial'
+# brew 'gnu-tar'
+# brew 'mercurial'
 
 # ---- docker utilities
 # brew 'dive'   # docker layers inspection on steroids

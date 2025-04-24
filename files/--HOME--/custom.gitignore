@@ -11,6 +11,7 @@ __pycache__
 .cisco/vpn/log
 .cocoapods/
 .cordova
+.cursor
 .dartServer/
 .docker/
 .dotnet/
@@ -235,6 +236,7 @@ __pycache__
 bookmarkbackups/
 Cache/
 CachedData/
+gokube/
 GPUCache/
 log/*.log
 logs

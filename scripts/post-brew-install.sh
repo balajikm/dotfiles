@@ -40,6 +40,12 @@ if is_directory '/Applications/VSCodium - Insiders.app'; then
   # extra: also symlink for 'code'
   replace_executable_if_exists_and_is_not_symlinked "${HOMEBREW_PREFIX}/bin/codium" "${HOMEBREW_PREFIX}/bin/code"
   success 'Successfully linked vscodium-insiders into PATH'
+elif is_directory '/Applications/Visual Studio Code - Insiders.app'; then
+  # Symlink from the embedded executable for code-insiders
+  replace_executable_if_exists_and_is_not_symlinked '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code-insiders' "${HOMEBREW_PREFIX}/bin/code-insiders"
+  # if we are using 'code-insiders' only, symlink it to 'code' for ease of typing
+  replace_executable_if_exists_and_is_not_symlinked "${HOMEBREW_PREFIX}/bin/code-insiders" "${HOMEBREW_PREFIX}/bin/code"
+  success 'Successfully linked vscode-insiders into PATH'
 elif is_directory '/Applications/VSCodium.app'; then
   # Symlink from the embedded executable for codium
   replace_executable_if_exists_and_is_not_symlinked '/Applications/VSCodium.app/Contents/Resources/app/bin/codium' "${HOMEBREW_PREFIX}/bin/codium"
