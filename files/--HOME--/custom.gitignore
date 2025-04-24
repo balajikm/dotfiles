@@ -10,6 +10,7 @@
 .cisco/vpn/log
 .cocoapods/
 .cordova
+.cursor
 .dartServer/
 .docker/
 .dotnet/
@@ -232,6 +233,7 @@
 bookmarkbackups/
 Cache/
 CachedData/
+gokube/
 GPUCache/
 log/*.log
 logs
