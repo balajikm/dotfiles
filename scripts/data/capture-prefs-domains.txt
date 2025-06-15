@@ -312,3 +312,13 @@ us.zoom.xos
 us.zoom.ZoomAutoUpdater
 us.zoom.ZoomClips
 ZoomChat
+company.thebrowser.Browser
+com.todesktop.230313mzl4w4u92
+com.mschrage.fig
+com.jetbrains.intellij.ce
+ai.elementlabs.lmstudio
+com.github.IngmarStein.Monolingual
+com.omnissa.horizon.client.mac
+com.jetbrains.rider
+com.tinyspeck.slackmacgap
+com.microsoft.VSCodeInsiders
