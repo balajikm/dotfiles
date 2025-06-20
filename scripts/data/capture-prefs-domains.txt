@@ -1,3 +1,4 @@
+ai.elementlabs.lmstudio
 app.zen-browser.zen
 Apple Global Domain
 asc.onlyoffice.ONLYOFFICE
@@ -316,6 +317,7 @@ com.docker.docker
 com.electron.ollama
 com.generalarcade.flycut
 com.github.Electron
+com.github.IngmarStein.Monolingual
 com.google.Chrome
 com.google.Chrome.beta
 com.google.Chrome.canary
@@ -323,6 +325,8 @@ com.google.gmp.measurement.monitor
 com.googlecode.iterm2
 com.googlecode.iterm2.private
 com.googlecode.munki.ManagedSoftwareCenter
+com.jetbrains.intellij.ce
+com.jetbrains.rider
 com.jordanbaird.Ice
 com.lowtechguys.ZoomHider
 com.macpaw.site.theunarchiver
@@ -333,18 +337,23 @@ com.microsoft.shared
 com.microsoft.teams2.helper
 com.microsoft.VSCodeInsiders
 com.mitchellh.ghostty
+com.mschrage.fig
 com.objective-see.KnockKnock
 com.okta.mobile
+com.omnissa.horizon.client.mac
 com.ovatar.batteryapp
 com.parallels.Parallels Desktop
 com.pdfeditor.pdfeditormac
 com.qtproject
 com.raycast.macos
+com.tinyspeck.slackmacgap
 com.titanium.OnyX
 com.titanium.OnyX.update
+com.todesktop.230313mzl4w4u92
 com.utmapp.UTM
 com.visualstudio.code.oss
 com.vscodium.VSCodiumInsiders
+company.thebrowser.Browser
 eu.exelban.Stats
 familycircled
 icloudmailagent

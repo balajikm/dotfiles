@@ -206,7 +206,7 @@
   old = red bold
   whitespace = red reverse
 [column]
-  # ui = auto
+  ui = auto
 [commit]
   # verbose = true
 [core]
