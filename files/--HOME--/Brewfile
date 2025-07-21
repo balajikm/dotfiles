@@ -61,66 +61,64 @@ return 0 if is_base_install
 # formulae pulled in for advanced configs (these are optional, but still recommended)
 brew 'bat'
 brew 'btop'
+brew 'cmake'
+brew 'docker-credential-helper'
+brew 'gh'
 brew 'git-gui'
+brew 'glib'
+brew 'gnutls'
+brew 'helm'
 brew 'jq'
+brew 'kubernetes-cli'
+brew 'libidn2'
+brew 'libslirp'
+brew 'maven'
 brew 'moreutils'
 brew 'ncdu'
 brew 'pandoc'
 brew 'prettyping'
+brew 'protobuf'
+brew 'psqlodbc'
 brew 'ripgrep'
+brew 'sdl2'
 brew 'syncthing'
-brew 'tlrc'
+brew 'telnet'
+brew 'tldr'
+brew 'uv'
 
-cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
-cask 'boring-notch', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'boringNotch'" if OS::Mac::version >= 14
-cask 'brave-browser'
+
+cask 'arc'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
-cask 'firefox@nightly' #, greedy: true
-cask 'fliqlo'
-cask 'google-chrome@beta'
-cask 'grayjay'
-cask 'jordanbaird-ice@beta', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if OS::Mac::version >= 14
-cask 'keepassxc@beta'
+cask 'cursor'
+cask 'fig'
+cask 'google-chrome'
+cask 'intellij-idea-ce'
+cask 'insomnia'
+cask 'jordanbaird-ice', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'"
+cask 'keepassxc'
 cask 'keycastr'
 cask 'keyclu' if is_arm
+cask 'lm-studio' if is_arm
+cask 'monolingual'
 cask 'ollama-app', restart_service: :changed
+cask 'omnissa-horizon-client'
 cask 'onlyoffice'
-cask 'onyx' unless is_beta_os
 cask 'pearcleaner'
-cask 'protonvpn'
 cask 'rancher'
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
+cask 'rider'
+cask 'slack'
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen@twilight'
+cask 'visual-studio-code@insiders'
 cask 'zoom'
 
-brew 'mas'
-mas 'PDFgear', id: 6469021132
-
 # VSCode extensions
-# Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find the executable 'code'!)
-is_vscode_installed = !`PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}" which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
+# Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find code!)
+is_vscode_installed = !`PATH=/opt/homebrew/bin:/usr/local/bin:${PATH} which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
 if is_vscode_installed
-  # This is failing on different machines
-  # vscode 'eamodio.gitlens'
-  # vscode 'formulahendry.code-runner'
-  # vscode 'nicolasvuillamy.vscode-groovy-lint'
-  # vscode 'redhat.java'
-  # vscode 'sonarsource.sonarlint-vscode'
-  # vscode 'vscjava.vscode-java-debug'
-  # vscode 'vscjava.vscode-java-pack'
-  # vscode 'vscjava.vscode-java-test'
-  # vscode 'vscjava.vscode-lombok'
-  # vscode 'wholroyd.jinja'
-  vscode 'brandonkirbyson.vscode-animations'
-  vscode 'britesnow.vscode-toggle-quotes'
-  vscode 'codezombiech.gitignore'
-  vscode 'davidanson.vscode-markdownlint'
-  vscode 'dbaeumer.vscode-eslint'
-  vscode 'digitalbrainstem.javascript-ejs-support'
-  vscode 'drcika.apc-extension'
-  vscode 'editorconfig.editorconfig'
+  vscode 'bpruitt-goddard.mermaid-markdown-syntax-highlighting'
+  vscode 'dart-code.dart-code'
+  vscode 'dart-code.flutter'
   vscode 'esbenp.prettier-vscode'
   vscode 'genuitecllc.codetogether'
   vscode 'google.geminicodeassist'
@@ -130,22 +128,20 @@ if is_vscode_installed
   vscode 'mkhl.direnv'
   vscode 'ms-azuretools.vscode-containers'
   vscode 'ms-azuretools.vscode-docker'
-  vscode 'ms-vscode.atom-keybindings'
-  vscode 'ms-vscode.vscode-typescript-next'
-  vscode 'oderwat.indent-rainbow'
-  vscode 'orta.vscode-jest'
-  vscode 'redhat.vscode-yaml'
-  vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
-  vscode 'shopify.ruby-lsp'
-  vscode 'tchayen.markdown-links'
+  vscode 'ms-dotnettools.csdevkit'
+  vscode 'ms-dotnettools.csharp'
+  vscode 'ms-dotnettools.vscode-dotnet-runtime'
+  vscode 'ms-toolsai.jupyter-keymap'
+  vscode 'ms-toolsai.jupyter-renderers'
+  vscode 'ms-toolsai.jupyter'
+  vscode 'ms-toolsai.vscode-jupyter-cell-tags'
+  vscode 'ms-toolsai.vscode-jupyter-slideshow'
+  vscode 'pkief.material-icon-theme'
+  vscode 'rangav.vscode-thunder-client'
   vscode 'tyriar.sort-lines'
-  vscode 'vscode-icons-team.vscode-icons'
-  vscode 'wayou.vscode-todo-highlight'
-  vscode 'wmaurer.change-case'
-  vscode 'yzhang.markdown-all-in-one'
+  vscode 'vstirbu.vscode-mermaid-preview'
 end
-
+if is_vscode_installed
 # ----------------------------------------------------------------------------------------------------------
 # Moved these brew and cask lines to clean up the noise from the above alphabetically-sorted lists
 
@@ -194,17 +190,12 @@ brew 'sccache'
 # cask 'git-credential-manager'   # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
 # cask 'intellij-idea-ce'
 # cask 'kdiff3'
-# cask 'knockknock'
-# cask 'floorp' # Doesn't have keyboard shortcuts to switch across workspaces
 # cask 'licecap'
 # cask 'lulu'
 # cask 'microsoft-remote-desktop'
 # cask 'microsoft-teams'
-# cask 'monolingual'
 # cask 'netspot'
 # cask 'ngrok'
-# cask 'notunes'
-# cask 'silicon' if is_arm
 # cask 'tempbox'
 # cask 'the-unarchiver'
 # cask 'thunderbird@daily'

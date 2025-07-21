@@ -6,7 +6,12 @@
 .bundle/cache
 .cisco/vpn/log
 .cocoapods/
+.continue/
+.codeium
+.lmstudio-home-pointer
+.omnissa
 .cordova
+.cursor
 .dartServer/
 .docker/
 .dotnet/
@@ -19,6 +24,7 @@
 .idea/markdown* # Only if you have the Markdown Navigator plugin
 .idea/uiDesigner.xml
 .idea/workspace.xml # Critical to ignore (guaranteed to be different on every machine and changes frequently)
+.lmstudio
 .minikube
 .node-gyp
 .node-stats/local-storage.json
@@ -37,6 +43,7 @@
 .terraform.d/checkpoint_cache
 .terraform.d/checkpoint_signature
 .vnc/ViewerStore
+.windsurf
 *-journal
 *.db-wal
 *.fish
@@ -196,6 +203,8 @@
 /.zsh_sessions/
 /.zsh/
 /*.key
+/android-sdk
+/AndroidStudioProjects
 /app.retry
 /Applications/
 /Applications\ (Parallels)
@@ -223,12 +232,14 @@
 /share
 /Sites/
 /swap-pane
+/windsurf
 /trivy
 /Virtual\ Machines*
 /VirtualBox*
 bookmarkbackups/
 Cache/
 CachedData/
+gokube/
 GPUCache/
 log/*.log
 logs
